@@ -9,7 +9,7 @@ import (
 )
 
 // Maximum Path Sum II
-// https://projecteuler.net/problem=67
+// https://projecteuler.net/problem=18
 func main() {
 	file, _ := os.Open(os.Args[1])
 	defer file.Close()
