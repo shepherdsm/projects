@@ -46,8 +46,10 @@ func NewRectString(str []string) *Rect {
 }
 
 func (r1 *Rect) Overlaps(r2 *Rect) bool {
-	return (r1.lrx < r2.ulx || r1.ulx < r2.lrx) &&
-		(r1.lry < r2.uly || r1.uly < r2.lry)
+	return !(r1.lrx < r2.ulx ||
+		r1.lry > r2.uly ||
+		r1.ulx > r2.lrx ||
+		r1.uly < r2.lry)
 }
 
 func getCoord(s string) int {
