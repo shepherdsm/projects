@@ -8,7 +8,7 @@ import (
 	"strings"
 )
 
-// Maximum Path Sum II
+// Maximum Path Sum I
 // https://projecteuler.net/problem=18
 func main() {
 	file, _ := os.Open(os.Args[1])
