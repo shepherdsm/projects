@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"math"
 	"os"
 )
 
@@ -24,6 +25,14 @@ func main() {
 
 	for scanner.Scan() {
 		fmt.Sscanf(scanner.Text(), format, &centerX, &centerY, &radius, &pointX, &pointY)
-		fmt.Println(centerX, centerY, radius, pointX, pointY)
+		fmt.Println(pointInCircle(centerX, centerY, radius, pointX, pointY))
 	}
+}
+
+// Determines if a point is inside the circle by calculating the distance
+// between the center and the point. If the center is less than the radius,
+// we're in the circle.
+func pointInCircle(cirX, cirY, rad, x, y float64) bool {
+	d := math.Pow(x-cirX, 2) + math.Pow(y-cirY, 2)
+	return d < math.Pow(rad, 2)
 }
